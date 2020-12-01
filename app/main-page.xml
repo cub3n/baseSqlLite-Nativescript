@@ -1,0 +1,24 @@
+  
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+
+    
+
+    <StackLayout>
+        <TextField id="carName" hint="Nombre del carro" text="{{ carName }}" />
+        <TextField id="carDescription" hint="Descripción" text="{{ carDescription }}" />
+       
+        <StackLayout orientation="horizontal" height ="auto">
+            <Button text="Insertar Carro" tap="{{ insert }}" />
+            <Button text="Ver Lista de Carros" tap="{{ select }}" />
+        </StackLayout >
+        <ListView items="{{ mostrarBase }}" height="auto">
+        <ListView.itemTemplate>
+        <GridLayout columns="2*,*" rows="auto" class="item item-row">
+            <Label text="{{ name }}" textWrap="true" row="0" col="0"/>
+            <Label text="{{ description }}" textWrap="true" row="0" col="1"/>
+        </GridLayout>
+        </ListView.itemTemplate>
+        </ListView>
+
+    </StackLayout>
+</Page>
